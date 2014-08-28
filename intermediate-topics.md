@@ -1,18 +1,20 @@
- * functional
- * best practices
- * app composition
- * implicits
- * java interop
- * actors
- * streaming libraries
- * json
- * play
- * sbt
- * using traits
- * the cake pattern 
- * variance, type bounds
- * typeclasses
- * different test libraries, scala check
- * collections
-   * lazy streams
- * concurrency, schedulers, futures, promises
+ * [x] case classes 
+ * [x] pattern matching
+ * [x] typeclasses 
+ * [ ] concurrency, schedulers, futures, promises 
+ * [ ] sbt
+ * [ ] functional
+ * [ ] best practices
+ * [ ] app composition
+ * [ ] implicits
+ * [ ] java interop
+ * [ ] actors
+ * [ ] streaming libraries
+ * [ ] json
+ * [ ] play
+ * [ ] using traits
+ * [ ] the cake pattern
+ * [ ] variance, type bounds
+ * [ ] different test libraries, scala check
+ * [ ] collections
+   * [ ] lazy streams
