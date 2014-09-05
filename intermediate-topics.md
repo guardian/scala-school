@@ -1,7 +1,7 @@
  * [x] case classes 
  * [x] pattern matching
  * [x] typeclasses 
- * [ ] concurrency, schedulers, futures, promises 
+ * [x] concurrency, schedulers, futures, promises 
  * [ ] sbt
  * [ ] functional
  * [ ] best practices
