@@ -17,9 +17,11 @@ object Folds {
     *
     * Given a list of numbers, it should add them all up and return the sum.
     *
+    * TIP: You should use pattern matching as well as recursion here.
+    *
     * If you want to show off, make it tail-recursive.
     *
-    * PROTIP: If you annotate a tail recursive function with scala.annotation.tailrec, the compiler will tell you if it
+    * Tip: If you annotate a tail recursive function with scala.annotation.tailrec, the compiler will tell you if it
     * can't tail-call optimise it. Don't know what that means? Ask your teacher!
     */
   def sum(as: LinkedList[Double]): Double = ???
@@ -45,6 +47,9 @@ object Folds {
     * Define `max` using a recursive function.
     *
     * Given a list of numbers, it should return the maximum number from the list.
+    *
+    * TIP: This one is a bit tricky. You might want to define another function as a helper, which takes the remaining
+    * numbers in the list and the current maximum as arguments.
     */
   def max(as: LinkedList[Double]): Double = ???
 

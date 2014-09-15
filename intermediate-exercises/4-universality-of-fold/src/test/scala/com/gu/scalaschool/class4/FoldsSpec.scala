@@ -31,7 +31,7 @@ class FoldsSpec extends FlatSpec with Matchers {
   "fold" should "behave as specified" in {
     fold(Cons(0, Cons(-21, Cons(20, Cons(15, EmptyList)))), 0) { (acc: Int, n: Int) =>
       Math.abs(acc) max Math.abs(n)
-    } shouldEqual -21
+    } shouldEqual 21
   }
 
   "map" should "map a function over a list" in {
