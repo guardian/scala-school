@@ -46,6 +46,3 @@ Syllabus
 |         9 | 26-Nov-2018 | Asynchronous, Future etc                                                                       |              |              | Modify web server to work asynchronously                         |
 |        10 | 03-Dec-2018 | Practical (exercises, questions etc)                                                           |              |              |                                                                  |
 |        11 | 10-Dec-2018 | Library tour (e.g something like awesome scala?)                                               |              |              |                                                                  |
-
-
-
