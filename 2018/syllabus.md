@@ -1,7 +1,7 @@
 Introduction
 ============
 
-The 2008 session of Scala School will run from October 1st until the
+The 2018 session of Scala School will run from October 1st until the
 end of December, and will consist of a weekly class (there will be two
 instances of this class to allow for two separate groups to study the
 material).
