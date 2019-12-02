@@ -1,0 +1,4 @@
+target/
+project/
+logs/
+.DS_STORE
