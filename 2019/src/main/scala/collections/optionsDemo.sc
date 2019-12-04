@@ -17,7 +17,7 @@ val noAge: Option[Int] = None
 // greetSomeoneOnTheirBirthday("Karen", Some(45))  -  we will greet Karen, who is 45 today
 // greetSomeoneOnTheirBirthday("Karen", None) - we will greet Karen, who doesn't find specific age relevant
 
-def greetSomeoneOnTheirBirthday(name: String, age: Option[Int]) = {
+def greetSomeoneOnTheirBirthday(name: String, age: Option[Int]): String = {
   //perhaps we'll talk about pattern matching in more detail later
   age match {
     case Some(age) => s"Happy birthday, dear ${name}. Happy birthday to you. Your ${age}th year is going to be fabulous."
