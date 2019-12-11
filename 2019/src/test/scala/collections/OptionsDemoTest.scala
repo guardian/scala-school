@@ -17,4 +17,8 @@ class OptionsDemoTest extends FlatSpec {
     assert(userHasUpdatedProfile("12345", Some("jo"), None) == true)
   }
 
+  it should "return true if only the last name has a value" in {
+    assert(userHasUpdatedProfile("12345", None, Some("bloggs")) == true)
+  }
+
 }
