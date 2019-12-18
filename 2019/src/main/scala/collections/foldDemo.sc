@@ -64,3 +64,6 @@ foldSum(List(1, 2, 3))
 
 
 // there is a nice blog post on folds here https://commitlogs.com/2016/09/10/scala-fold-foldleft-and-foldright/
+
+// we do actually manage user consents and use folds there:
+// https://github.com/guardian/identity/blob/4c72a618eb54bcae714898264e5e846a023cfa96/identity-model/src/main/scala/com/gu/identity/model/Consent.scala
