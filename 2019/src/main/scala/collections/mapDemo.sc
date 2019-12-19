@@ -22,6 +22,9 @@ messageOnlyIfName(None) //None
 //we may want to flatmap
 // flatmap combines mapping, then flattening in nexted structures
 val nestedNumbers = List(List(1, 2), List(3, 4))
+val nestedNumbersFlattened = nestedNumbers.flatten
+nestedNumbersFlattened.map(doubleIt)
+
 val numbersDoubled = nestedNumbers.map { numberList: Seq[Int] => // map applies a function to each element and each element is a list
   numberList map { //then, for each list let's double every number in the list
     number => number * 2
@@ -30,7 +33,7 @@ val numbersDoubled = nestedNumbers.map { numberList: Seq[Int] => // map applies 
 
 //oops, that's not what we want
 
-numbersDoubled.flatten //List(2, 4, 5, 6)
+numbersDoubled.flatten
 //that's better
 
 //even better:
