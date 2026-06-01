@@ -108,7 +108,7 @@ Variables are defined using the keyword `var`. These are uncommon.
 ```scala
 var changeMe: String = "I can be changed later"
 changeMe = "I have changed"
-println(changeMe) // `println` prints the value to the console
+println(changeMe) // prints "I have changed" to the console
 ```
 
 <!-- ![a variable being reassigned](./images/variable-example.png) -->
@@ -118,15 +118,32 @@ It is **much** more common to use `val`, the value keyword.
 
 ```scala
 val number: Int = 123
+number = 456 // error
 ```
 
 <!-- ![a value cannot be reassigned](./images/value-example.png) -->
 <img height=160 width=380 src="./images/value-example.png" alt="a value cannot be reassigne"/>
 
 
-Scala is a **typed** language. It can often infer types based on code that has been written already but often its best for us to take control and specify that ourselves for a variety of reasons.
+Scala is a **statically typed** language which must be compiled before it is run. It enforces type safety at compile-time. It can infer types based on the code that has been written already (type inference).
+When the types are simple and obvious, we can omit the types from our code and leave Scala to infer them. In most other scenarios, it's best to explicitly define them in our code.
 
-Here are a list of types in Scala 2: https://www.scala-lang.org/api/2.13.5/scala/index.html
+Examples of Scala types:
+- `String`
+- `Int`
+- `Float`
+- `Double`
+- `Long`
+- `Boolean`
+- `List`
+- `Option`
+- `Either`
+- `Future`
+- `Unit`
+
+We'll come to some of these in more detail later.
+
+Here are a list of core types in Scala 2: https://www.scala-lang.org/api/2.13.5/scala/index.html
 
 #### Print statements
 
@@ -147,7 +164,7 @@ val bigNumber: Long = 9876543210
  * I am a multi-line comment
  * I can also act as documentation for the line underneath
  */
-val notDefinedYet = ??? // ??? means not implmented yet
+def myFunction(): Unit => {}
 ```
 
 #### Blocks
@@ -162,7 +179,7 @@ println({
 // Prints "Hello world!"
 ```
 
-In Scala, we often don't explicitly `return` anything. The result of a block is the last line evaluated in that block.
+In Scala, we very rarely explicitly `return` anything. The result of a block is the last line evaluated in that block.
 
 #### Functions
 
@@ -187,7 +204,8 @@ println(s"My favourite colour is ${"dark " + colour}")
 
 #### Operations
 
-Mathematical operations like
+Mathematical operations work in a similar way to other programming languages.
+For example:
 
 ```scala
 val addition = 1 + 2 // 3
@@ -206,7 +224,8 @@ Note: `==` double equals means "is equal to". `=` single equals is for _assignme
 
 **Lists**
 
-Lists in Scala are immutable 
+Lists in Scala are immutable ie. there are no operations or methods that can mutate the original data.
+
 ```scala
 // List is both a type and a constructor.
 // Square brackets for the type, standard brackets for the constructor
@@ -236,6 +255,10 @@ myList +: anotherList // List(List(1, 2, 3), 9, 8, 7)
 myList :+ anotherList // List(1, 2, 3, List(9, 8, 7))
 ```
 
+There are other types of collections available including [`Set`](https://docs.scala-lang.org/overviews/collections-2.13/sets.html) (a collection with no duplicates), [`Seq`](https://docs.scala-lang.org/overviews/collections-2.13/seqs.html) (sequences), [`Map`](https://docs.scala-lang.org/overviews/collections-2.13/maps.html) (a collection of key value pairs).
+
+There are many more types of collections available - see [the Scala documentation](https://docs.scala-lang.org/overviews/collections-2.13/introduction.html) for more information on these.
+
 
 ### Conditional Constructs & Loops
 
@@ -251,7 +274,7 @@ if (condition) {
   // expression
 }
 ```
-Notice how each of these is a *block* of code. You can omit the blocks like so:
+Notice how each of these is a *block* of code. You can omit the blocks if your expression can be evaluated on one line, like so:
 
 ```scala
 def label(n: Int) = {
