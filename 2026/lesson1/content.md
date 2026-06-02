@@ -4,22 +4,19 @@
 
 Scala runs on the JVM (Java Virtual Machine), so **you must have Java installed** on your computer in order to run Scala code.
 
-You can install [Java](https://www.java.com/en/) in a number of different ways. Here's how you do it using `mise`:
-
-```
-$ mise install java@<version>
+You can install [Java](https://www.java.com/en/) in a number of different ways. See the Guardian's [Java update guide](https://docs.google.com/document/d/1ZR-YnaXCT5_gLVmTCeGs0mWd3KPaAozPjQK8uUzHZ9w/edit?usp=sharing) for more details on installation and preferred versions. 
+You can install Java by using [`mise`](https://mise.jdx.dev/getting-started.html). To install the AWS Corretto 25 version of Java, use the following command in `mise`:
+```shell
+$ mise install java@corretto-25
 ```
 where `<version>` is the Java version you want to install.
 
 You'll also need to download [`sbt`](https://www.scala-sbt.org/) which you can do using `mise` as well:
-```
+```shell
 $ mise install sbt@latest
 ```
 
 SBT (Scala Build Tool) is a Scala project builder. This is the tool that builds our Scala project for us.
-
-You might need to also install [OpenJDK](https://openjdk.org).
-
 
 ## Getting started
 
@@ -59,9 +56,9 @@ Notice how we have a `build.sbt` file at the root, a little like a `package.json
 
 ### build.sbt
 
-This describes how the project will be built and processed. It sets some settings and metadata for your package:
+This describes how the project will be built and processed. It sets some configuration and metadata for your package:
 - which scala version you're using
-- which version this is
+- the current version of your package
 - the organisation name and prefix for your package
 - library dependencies to install
 
@@ -76,25 +73,17 @@ The Guardian used to own the domain `gu.com` so prefixed the Scala packages with
 #### Dependencies
 
 Describes which other libraries you need to install in your project.
-By convention, Scala packages use `%%` whereas Java packages use `%`
-
-For example, if we are installing the Scala `Play JSON` library, we do this by adding this to our list of dependencies:
-```sbt
-  // Scala
+The syntax for installing Scala packages is:
+```scala
+  // <organisation> %% <library> % version
   "org.playframework" %% "play-json" % "3.0.6"
-```
-
-If we want to install a Java dependency in our Scala project, we need to use a single `%` instead of double (`%%`) e.g. AWS S3
-```sbt
-  // Java
-  "software.amazon.awssdk" % "s3" % "2.44.4"
 ```
 
 _You can learn more about SBT and how to set up a project in Lesson 3 of Get Programming With Scala by Daniela Sfregola._
 
 ### Which IDE
 
-IntelliJ is the Guardian's recommended IDE for working with Scala.
+IntelliJ is the Guardian's recommended IDE for working with Scala. [See how to install IntelliJ at the Guardian here](https://docs.google.com/document/d/1_0VXjwxfZknh2C0qlT9yZ-JkbAU7Q__U1fWHOT1zdGo/edit?tab=t.0#heading=h.ncxfzlwm1i7h)
 You can also use VSCode, by installing the [Metals](https://scalameta.org/metals/docs/editors/vscode) extension.
 
 ## Basic Syntax
@@ -255,9 +244,9 @@ myList +: anotherList // List(List(1, 2, 3), 9, 8, 7)
 myList :+ anotherList // List(1, 2, 3, List(9, 8, 7))
 ```
 
-There are other types of collections available including [`Set`](https://docs.scala-lang.org/overviews/collections-2.13/sets.html) (a collection with no duplicates), [`Seq`](https://docs.scala-lang.org/overviews/collections-2.13/seqs.html) (sequences), [`Map`](https://docs.scala-lang.org/overviews/collections-2.13/maps.html) (a collection of key value pairs).
+Other types of collections available include [`Set`](https://docs.scala-lang.org/overviews/collections-2.13/sets.html) (a collection with no duplicates), [`Seq`](https://docs.scala-lang.org/overviews/collections-2.13/seqs.html) (sequences), [`Map`](https://docs.scala-lang.org/overviews/collections-2.13/maps.html) (a collection of key value pairs).
 
-There are many more types of collections available - see [the Scala documentation](https://docs.scala-lang.org/overviews/collections-2.13/introduction.html) for more information on these.
+You can see more types of collections in [the Scala documentation](https://docs.scala-lang.org/overviews/collections-2.13/introduction.html).
 
 
 ### Conditional Constructs & Loops
